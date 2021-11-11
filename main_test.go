@@ -9,7 +9,7 @@ import (
 )
 
 func Test_DatabaseStarts(t *testing.T) {
-	db := embeddedpostgres.NewDatabase()
+	db := embeddedpostgres.NewDatabase(embeddedpostgres.DefaultConfig())
 	err := db.Start()
 	assert.NoError(t, err)
 	log.Println(err)
