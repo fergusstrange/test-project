@@ -1,0 +1,18 @@
+name: Test Project
+on: [pull_request,push]
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-go@v2
+        with:
+          go-version: '^1.13.1' # The Go version to download (if necessary) and use.}
+      - run: go test -v
+        env:
+          DB_HOST: localhost
+          DB_PORT: 5432
+          DB_USER: postgres
+          DB_NAME: postgres
+          DB_PASSWORD: postgres
+          LC_CTYPE: UTF-8
