@@ -12,9 +12,11 @@ func Test_DatabaseStarts(t *testing.T) {
 	db := embeddedpostgres.NewDatabase()
 	err := db.Start()
 	assert.NoError(t, err)
+	log.Println(err)
 
 	log.Println("I started, now it's time to stop...")
 
 	err = db.Stop()
 	assert.NoError(t, err)
+	log.Println(err)
 }
