@@ -9,14 +9,13 @@ import (
 )
 
 func Test_DatabaseStarts(t *testing.T) {
-	db := embeddedpostgres.NewDatabase(embeddedpostgres.DefaultConfig())
+	db := embeddedpostgres.NewDatabase(embeddedpostgres.DefaultConfig().
+		Version(embeddedpostgres.V12))
 	err := db.Start()
 	assert.NoError(t, err)
-	log.Println(err)
 
 	log.Println("I started, now it's time to stop...")
 
 	err = db.Stop()
 	assert.NoError(t, err)
-	log.Println(err)
 }
