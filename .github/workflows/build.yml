@@ -15,3 +15,4 @@ jobs:
           DB_USER: postgres
           DB_NAME: postgres
           DB_PASSWORD: postgres
+          LC_CTYPE: UTF-8
