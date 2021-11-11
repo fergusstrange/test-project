@@ -9,8 +9,7 @@ import (
 )
 
 func Test_DatabaseStarts(t *testing.T) {
-	db := embeddedpostgres.NewDatabase(embeddedpostgres.DefaultConfig().
-		RuntimePath("/home/runner/work/test-project/test-project"))
+	db := embeddedpostgres.NewDatabase()
 	err := db.Start()
 	assert.NoError(t, err)
 
